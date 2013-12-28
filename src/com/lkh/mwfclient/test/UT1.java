@@ -28,7 +28,6 @@ import com.aliyun.openservices.ClientConfiguration;
 import com.aliyun.openservices.oss.OSSClient;
 import com.aliyun.openservices.oss.model.ObjectMetadata;
 import com.lkh.mwfclient.AWEClient;
-import com.lkh.mwfclient.MwfClientException;
 
 public class UT1 extends TestCase {
 	private static Logger logger = Logger.getLogger(UT1.class);
@@ -475,7 +474,7 @@ public class UT1 extends TestCase {
 			try {
 				team = client.getTeamByName("test_team2");
 				client.deleteTeamById((String) team.get("ID"));
-			} catch (MwfClientException ex) {
+			} catch (Exception ex) {
 
 			}
 			String teamid = client.createTeam("test_team2", "test_team2_memo");
